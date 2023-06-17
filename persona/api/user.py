@@ -7,8 +7,8 @@ import json
 def role_check(user, target):
     if user == target: # Don't allow impersonating self
         return False
-    if user == "Administrator" or "System Manager" in frappe.get_roles():
-        is_privileged_user = target == "Administrator" or "System Manager" in frappe.get_roles(target)
+    if user == "Administrator":
+        is_privileged_user = target == "Administrator"
         return not is_privileged_user
     return False
 
